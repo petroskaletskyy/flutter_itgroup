@@ -15,9 +15,9 @@ class TabContainer extends StatelessWidget {
         )),
         child: new Padding(
           padding: EdgeInsets.only(
-            top: 52.0 / MediaQuery.of(context).devicePixelRatio,
-            left: 110.0 / MediaQuery.of(context).devicePixelRatio,
-            right: 110.0 / MediaQuery.of(context).devicePixelRatio,
+            top: MediaQuery.of(context).size.height * 0.021,
+            left: MediaQuery.of(context).size.width * 0.082,
+            right: MediaQuery.of(context).size.width * 0.082,
           ),
           child: new Column(
             children: <Widget>[
@@ -33,7 +33,7 @@ class TabContainer extends StatelessWidget {
               ),
               new Padding(
                 padding: EdgeInsets.only(
-                    top: 30.0 / MediaQuery.of(context).devicePixelRatio),
+                    top: MediaQuery.of(context).size.height * 0.021),
                 child: new Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,7 +47,7 @@ class TabContainer extends StatelessWidget {
               ),
               new Padding(
                 padding: EdgeInsets.only(
-                    top: 30.0 / MediaQuery.of(context).devicePixelRatio),
+                    top: MediaQuery.of(context).size.height * 0.021),
                 child: new Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -61,7 +61,7 @@ class TabContainer extends StatelessWidget {
               ),
               new Padding(
                 padding: EdgeInsets.only(
-                    top: 30.0 / MediaQuery.of(context).devicePixelRatio),
+                    top: MediaQuery.of(context).size.height * 0.021),
                 child: new Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -75,7 +75,7 @@ class TabContainer extends StatelessWidget {
               ),
               new Padding(
                 padding: EdgeInsets.only(
-                    top: 30.0 / MediaQuery.of(context).devicePixelRatio),
+                    top: MediaQuery.of(context).size.height * 0.021),
                 child: new Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,

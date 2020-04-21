@@ -10,18 +10,18 @@ class AuthPage extends StatefulWidget {
 }
 
 class _AuthPageState extends State<AuthPage> {
-  final maskFormatter = new MaskTextInputFormatter(
+  final _maskFormatter = new MaskTextInputFormatter(
       mask: '+7 (***) ***-**-**', filter: {"*": RegExp(r'[0-9]')});
-  final String buttonLabel = "Получить SMS-код";
-  final String haveCodeLabel = "У меня уже есть SMS-код";
-  final String smartLabel = "Smart";
-  final String turkistanLabel = "Turkistan";
-  final String qazLabel = "QAZ";
-  final String kazLabel = "КАЗ";
-  final String rusLabel = "РУС";
-  final String engLabel = "ENG";
+  final String _buttonLabel = "Получить SMS-код";
+  final String _haveCodeLabel = "У меня уже есть SMS-код";
+  final String _smartLabel = "Smart";
+  final String _turkistanLabel = "Turkistan";
+  final String _qazLabel = "QAZ";
+  final String _kazLabel = "КАЗ";
+  final String _rusLabel = "РУС";
+  final String _engLabel = "ENG";
 
-  int checkedPosition = 2;
+  int _checkedPosition = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -44,13 +44,13 @@ class _AuthPageState extends State<AuthPage> {
                 new Container(
                   child: new Padding(
                     padding: EdgeInsets.only(
-                      left: 60.0 / MediaQuery.of(context).devicePixelRatio,
-                      right: 60.0 / MediaQuery.of(context).devicePixelRatio,
-                      top: 700.0 / MediaQuery.of(context).devicePixelRatio,
+                      left: MediaQuery.of(context).size.width * 0.05,
+                      right: MediaQuery.of(context).size.width * 0.05,
+                      top: MediaQuery.of(context).size.height * 0.40,
                     ),
                     child: new TextFormField(
                       inputFormatters: [
-                        maskFormatter,
+                        _maskFormatter,
                       ],
                       keyboardType: TextInputType.number,
                       style: new TextStyle(
@@ -73,13 +73,13 @@ class _AuthPageState extends State<AuthPage> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                    top: 90.0 / MediaQuery.of(context).devicePixelRatio,
-                    left: 145.0 / MediaQuery.of(context).devicePixelRatio,
-                    right: 145.0 / MediaQuery.of(context).devicePixelRatio,
+                    top: MediaQuery.of(context).size.height * 0.036,
+                    left: MediaQuery.of(context).size.width * 0.11,
+                    right: MediaQuery.of(context).size.width * 0.11,
                   ),
                   child: new SizedBox(
-                    width: 1047 / MediaQuery.of(context).devicePixelRatio,
-                    height: 117 / MediaQuery.of(context).devicePixelRatio,
+                    width: MediaQuery.of(context).size.width * 0.78,
+                    height: MediaQuery.of(context).size.height * 0.046,
                     child: new RaisedButton(
                       onPressed: () {
                         Navigator.push(
@@ -104,7 +104,7 @@ class _AuthPageState extends State<AuthPage> {
                         child: Container(
                           alignment: Alignment.center,
                           child: Text(
-                            buttonLabel,
+                            _buttonLabel,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white,
@@ -119,11 +119,12 @@ class _AuthPageState extends State<AuthPage> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      top: 46 / MediaQuery.of(context).devicePixelRatio),
+                    top: MediaQuery.of(context).size.height * 0.018,
+                  ),
                   child: new GestureDetector(
                     onTap: () {},
                     child: new Text(
-                      haveCodeLabel,
+                      _haveCodeLabel,
                       style: new TextStyle(
                         color: Colors.white,
                         fontSize: 15,
@@ -137,41 +138,46 @@ class _AuthPageState extends State<AuthPage> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                    top: 160.0 / MediaQuery.of(context).devicePixelRatio,
-                    left: 189.0 / MediaQuery.of(context).devicePixelRatio,
-                    right: 189.0 / MediaQuery.of(context).devicePixelRatio,
+                    top: MediaQuery.of(context).size.height * 0.08,
+                    left: MediaQuery.of(context).size.width * 0.14,
+                    right: MediaQuery.of(context).size.width * 0.14,
                   ),
-                  child: new Text(
-                    smartLabel.toUpperCase(),
-                    textAlign: TextAlign.center,
-                    style: new TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 74,
-                      color: Colors.white,
+                  child: new Container(
+                    width: MediaQuery.of(context).size.width * 0.71,
+                    height: MediaQuery.of(context).size.height * 0.22,
+                    child: new Column(
+                      children: <Widget>[
+                        new FittedBox(
+                          child: new Text(
+                            _smartLabel.toUpperCase(),
+                            style: new TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 100.0),
+                          ),
+                          fit: BoxFit.scaleDown,
+                          alignment: Alignment.center,
+                        ),
+                        new FittedBox(
+                          child: new Text(
+                            _turkistanLabel.toUpperCase(),
+                            style: new TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w100,
+                                fontSize: 100.0),
+                          ),
+                          fit: BoxFit.scaleDown,
+                          alignment: Alignment.center,
+                        ),
+                      ],
                     ),
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                    top: 10.0 / MediaQuery.of(context).devicePixelRatio,
-                    left: 189.0 / MediaQuery.of(context).devicePixelRatio,
-                    right: 189.0 / MediaQuery.of(context).devicePixelRatio,
-                  ),
-                  child: new Text(
-                    turkistanLabel.toUpperCase(),
-                    textAlign: TextAlign.center,
-                    style: new TextStyle(
-                      fontWeight: FontWeight.w100,
-                      fontSize: 48,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: 190 / MediaQuery.of(context).devicePixelRatio,
-                    left: 190 / MediaQuery.of(context).devicePixelRatio,
-                    right: 190 / MediaQuery.of(context).devicePixelRatio,
+                    top: MediaQuery.of(context).size.height * 0.05,
+                    left: MediaQuery.of(context).size.width * 0.14,
+                    right: MediaQuery.of(context).size.width * 0.14,
                   ),
                   child: new Container(
                     child: new Row(
@@ -181,14 +187,14 @@ class _AuthPageState extends State<AuthPage> {
                         new GestureDetector(
                           onTap: () {
                             setState(() {
-                              checkedPosition = 0;
+                              _checkedPosition = 0;
                             });
                           },
                           child: new Text(
-                            qazLabel.toUpperCase(),
+                            _qazLabel.toUpperCase(),
                             style: new TextStyle(
                               fontSize: 17,
-                              color: checkedPosition == 0
+                              color: _checkedPosition == 0
                                   ? Color.fromRGBO(255, 240, 0, 1.0)
                                   : Colors.white,
                             ),
@@ -197,14 +203,14 @@ class _AuthPageState extends State<AuthPage> {
                         new GestureDetector(
                           onTap: () {
                             setState(() {
-                              checkedPosition = 1;
+                              _checkedPosition = 1;
                             });
                           },
                           child: new Text(
-                            kazLabel.toUpperCase(),
+                            _kazLabel.toUpperCase(),
                             style: new TextStyle(
                               fontSize: 17,
-                              color: checkedPosition == 1
+                              color: _checkedPosition == 1
                                   ? Color.fromRGBO(255, 240, 0, 1.0)
                                   : Colors.white,
                             ),
@@ -213,14 +219,14 @@ class _AuthPageState extends State<AuthPage> {
                         new GestureDetector(
                           onTap: () {
                             setState(() {
-                              checkedPosition = 2;
+                              _checkedPosition = 2;
                             });
                           },
                           child: new Text(
-                            rusLabel.toUpperCase(),
+                            _rusLabel.toUpperCase(),
                             style: new TextStyle(
                               fontSize: 17,
-                              color: checkedPosition == 2
+                              color: _checkedPosition == 2
                                   ? Color.fromRGBO(255, 240, 0, 1.0)
                                   : Colors.white,
                             ),
@@ -229,14 +235,14 @@ class _AuthPageState extends State<AuthPage> {
                         new GestureDetector(
                           onTap: () {
                             setState(() {
-                              checkedPosition = 3;
+                              _checkedPosition = 3;
                             });
                           },
                           child: new Text(
-                            engLabel.toUpperCase(),
+                            _engLabel.toUpperCase(),
                             style: new TextStyle(
                               fontSize: 17,
-                              color: checkedPosition == 3
+                              color: _checkedPosition == 3
                                   ? Color.fromRGBO(255, 240, 0, 1.0)
                                   : Colors.white,
                             ),

@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 class CircleIconWidget extends StatelessWidget {
 
-  final String text;
-  final IconData icon;
+  final String _text;
+  final IconData _icon;
 
-  CircleIconWidget(this.icon, this.text);
+  CircleIconWidget(this._icon, this._text);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class CircleIconWidget extends StatelessWidget {
             new RawMaterialButton(
               onPressed: () {},
               child: new Icon(
-                icon,
+                _icon,
                 color: Colors.white,
                 size: 35.0,
               ),
@@ -36,7 +36,7 @@ class CircleIconWidget extends StatelessWidget {
                   width: 250.0/MediaQuery.of(context).devicePixelRatio,
                   alignment: Alignment.center,
                   child: new Text(
-                    text,
+                    _text,
                     textAlign: TextAlign.center,
                     textDirection: TextDirection.ltr,
                     maxLines: 2,

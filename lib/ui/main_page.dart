@@ -8,7 +8,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage>{
 
-  String titleLabel = "Smart Turkistan";
+  String _titleLabel = "Smart Turkistan";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,7 +40,7 @@ class _MainPageState extends State<MainPage>{
               centerTitle: true,
               automaticallyImplyLeading: false,
               title: new Text(
-                titleLabel,
+                _titleLabel,
                 style: new TextStyle(
                   color: Colors.white,
                   fontSize: 20,
